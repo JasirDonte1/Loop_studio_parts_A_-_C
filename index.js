@@ -11,10 +11,10 @@ let pantry = [protien, starch, vegetable, drink, fruit];
 //Part A #2: Construct a for loop that assembles a meal for each of 6 astronauts.
 
 function assembleMeal(){
-  let meal = [];
+  let meal = [];  //holds meal numbers that corresponds with item in array
   let includesKale = false;
   for(x=0;x<5;x++){
-    meal[x] = Math.floor(Math.random()*6);
+    meal[x] = Math.floor(Math.random()*6);  //get numbers 0-5
   }
   if(vegetable[meal[2]].includes("kale")){   //Check if vegtable selection contains kale
       includesKale = true;
@@ -41,10 +41,9 @@ let isNum = false;
 let nm = [];
 while(isNum == false){
   let mealCount = input.question("Select the number of meals to assemble. Enter number between 1-6\n");
-  if(Number(mealCount) != 'NaN'){
-    if(Number(mealCount) > 0 && Number(mealCount) < 7){
+  if(Number(mealCount) != 'NaN'){  //Checks if user input is a number 
+    if(Number(mealCount) > 0 && Number(mealCount) < 7){ //Checks if the input is within bounds of 1-6
       let bc = 0;
-      console.log(4);
       while (bc < Number(mealCount)){
         console.log(`Course ${bc+1}: ${assembleMeal()}\n`);
         bc++;
